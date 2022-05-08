@@ -1,0 +1,14 @@
+<h1>商品列表</h1>
+
+<%= link_to "新增商品", '/products/new' %>
+
+<a href="products/1" data-method="delete" data-confirm="hihi"> </a>
+<ul>
+  <% @products.each do |product| %>
+  <li>
+    <%= link_to product.title, product_path(product) %> |
+    <%#= link_to product.title, product_path(product.id) %>
+    <%= link_to "刪除", product_path(product), method: "delete", data: { confirm: "確定刪除？" } %>
+  </li>
+  <% end %>
+</ul>

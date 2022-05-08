@@ -3,4 +3,7 @@ class Product < ApplicationRecord
   # table: products
   # table_name: "item"
   # StudentScore -> student_scores
+
+  validates :title, presence: true
+  validates :price, presence: true
 end
