@@ -1,43 +1,31 @@
 <h1>新增商品頁</h1>
-
 <%# 邏輯Ｘ資料
   m = Product.new
 %>
-
-<%= form_with(model: @product, url: "/products", method: "post") do |f| %>
-
-<div class="field">
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <input type="text" name="text[title]" />
-</div>
-
-<div class="field">
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-</div>
-
-<div class="field">
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-</div>
-
-<div class="field">
-  <%= f.label :sku %>
-  <%= f.number_field :sku %>
-</div>
-
-<%= f.submit %>
-
+<%= form_with model: @product, url: "/products", method: "post" do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <input type="text" name="text[title]" />
+  </div>
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :sku %>
+    <%= f.number_field :sku %>
+  </div>
+  <%= f.submit %>
 <% end %>
-
 <form action="/products" method="post">
   <%# <input type="hidden" name="_method" value="delete" /> %>
   <%# <input type="text" name="authenticity_token" /> %>
   <input type="text" name="title" />
   <input type="submit" value="送出" />
 </form>
-
 <%= link_to "返回商品列表", root_path %>
-
-

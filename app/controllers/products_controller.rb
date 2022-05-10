@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new(title: 'hi') # 實體變數 model就可以拿得到
+    @product = Product.new(title: "hi") # 實體變數 model就可以拿得到
   end
 
   def create
@@ -29,8 +29,6 @@ class ProductsController < ApplicationController
       # redirect_to new_products_path
       render :new #借new html檔案來用
     end
-      
-    
 
     # render html: "hi"
     # render html: params["product"]
@@ -38,9 +36,9 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-     @product = Product.find(params["id"])
-     @product.destroy
-     redirect_to root_path
+    @product = Product.find(params["id"])
+    @product.destroy
+    redirect_to root_path
   end
 
   private
@@ -50,5 +48,4 @@ class ProductsController < ApplicationController
       :title, :price, :sku, :description
     )
   end
-  
 end
